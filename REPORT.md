@@ -1,4 +1,4 @@
-# Finding a fleet's MOT problems before the test
+# Which parts to check before a vehicle's annual test
 
 The **MOT test**, named after the Ministry of Transport that introduced it, is the roadworthiness check that most vehicles in Great Britain must pass every year once they are three years old.
 
@@ -21,11 +21,11 @@ The **MOT test**, named after the Ministry of Transport that introduced it, is t
 
 ## Approach
 
-**The client is a fleet manager** who runs vehicles in Great Britain, of any kind the MOT covers, such as motorcycles, cars, vans and buses. The manager pays for their MOT tests, their repairs and their time off the road, and decides which parts are inspected before each vehicle's test. The question: given what a vehicle's last tests found, which problems will its tests find this year, and is a prediction of them worth acting on?
+**The client is a fleet manager** who runs vehicles in Great Britain, of any kind the MOT covers, such as motorcycles, cars, vans and buses. The manager pays for their MOT tests, their repairs and their time off the road, and decides which parts are inspected before each vehicle's test. The question: given what a vehicle's last tests found, how likely is each problem at its tests this year, and is acting on those probabilities worth it?
 
 **The data** is every MOT test in Great Britain from 20 May 2018, when the current defect codes came into force, to the end of 2025: 308,127,375 tests with the defects and advisories each recorded, published by the Department for Transport and the Driver and Vehicle Standards Agency. Every source and decision is in [`DATA.md`](DATA.md).
 
-**A problem** is a defect together with the way the test recorded it: as a failure, a failure put right at the testing station, a minor defect or an advisory. There are 4,821 problems that can be recorded. A vehicle's **slot** is a run of its tests no more than 20 weeks apart, such as a test and its retests, and each slot is predicted from the slot before it: the problems recorded there, their groups, the time between the two, and the vehicle's details. A slot in 2025 records 1.85 problems on average, and 23.0% of slots record at least one failure, so that the vehicle fails its test and has to come back for a retest.
+**A problem** is a defect together with the way the test recorded it: as a failure, a failure put right at the testing station, a minor defect or an advisory. There are 4,821 problems that can be recorded. A vehicle's **slot** is a run of its tests no more than 20 weeks apart, such as a test and its retests, and the probability of each problem in a slot is estimated from the slot before it: the problems recorded there, their groups, the time between the two, and the vehicle's details. A slot in 2025 records 1.85 problems on average, and 23.0% of slots record at least one failure, so that the vehicle fails its test and has to come back for a retest.
 
 **The model** is one logistic regression per problem, as large as its training data can carry, about ten problems recorded per weight: the 64 commonest problems get every input, 2,740 get a small model of 15 weights, and the 2,017 rarest get their average rate. **The probability** we give each vehicle and problem is the chance that its next MOT test records the problem. Each test year from 2020 to 2025 is predicted by a model trained only on the years before it.
 

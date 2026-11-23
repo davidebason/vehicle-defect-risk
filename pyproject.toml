@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "motrisk"
 version = "0.1.0"
-description = "Predicting which problems a vehicle's next MOT test will find, and what checking them first saves a fleet manager, from Great Britain's anonymised MOT records."
+description = "Estimating the probability of each defect at a vehicle's next annual roadworthiness test, and what checking the likeliest first saves a fleet manager, from Great Britain's anonymised MOT records."
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
