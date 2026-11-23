@@ -1,4 +1,4 @@
-# Finding a fleet's MOT problems before the test
+# Which parts to check before a vehicle's annual test
 
 | Read | To |
 |---|---|
@@ -6,7 +6,7 @@
 | [`REPORT.md`](REPORT.md) | get the answer: what we found, and what we recommend a fleet manager does |
 | [`DATA.md`](DATA.md) | judge whether to believe the numbers: every source, unit and decision behind them |
 
-The **MOT test**, named after the Ministry of Transport that introduced it, is the roadworthiness check that most vehicles in Great Britain must pass every year once they are three years old. A fleet manager pays for every MOT a vehicle fails: the retest, and the time off the road. We took every MOT test in Great Britain from May 2018 to the end of 2025, 308 million of them with the defects and advisories each recorded, and asked whether a vehicle's past tests predict which problems its next one will find well enough for checking those parts beforehand to pay.
+The **MOT test**, named after the Ministry of Transport that introduced it, is the roadworthiness check that most vehicles in Great Britain must pass every year once they are three years old. A fleet manager pays for every MOT a vehicle fails: the retest, and the time off the road. We took every MOT test in Great Britain from May 2018 to the end of 2025, 308 million of them with the defects and advisories each recorded, and estimated, from a vehicle's past tests, the probability that its next one records each problem, to see whether checking the likeliest parts beforehand pays.
 
 ![Left: the money saved at p_crit = 0.1 from 2020 to 2025, rising from 10.6% to 13.2% for our model, from 5.0% to 8.7% for Repeat, and falling from 4.3% to 3.2% for Most popular. Right: the six groups of defects that save the most in 2025, engine oil leaks to registration plates, 33.8% to 23.9%, and the six that save the least, between 0.0% and −0.6%.](figures/money_saved.png)
 
